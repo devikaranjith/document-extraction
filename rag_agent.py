@@ -40,28 +40,6 @@ class RAGAgent:
             n_results=n_results, 
             document_id=document_id
         )
-    #
-    # def format_context(self, retrieved_results: List[Dict[str, Any]]) -> str:
-    #     """Format retrieved context for the LLM"""
-    #     if not retrieved_results:
-    #         return "No relevant context found."
-    #
-    #     context_parts = []
-    #     for i, result in enumerate(retrieved_results, 1):
-    #         content = result['content']
-    #         metadata = result['metadata']
-    #
-    #         context_part = f"Context {i}:\n"
-    #         context_part += f"Content: {content}\n"
-    #         context_part += f"Source: Page {metadata.get('page_number', 'Unknown')} "
-    #         context_part += f"({metadata.get('content_type', 'unknown')} content)\n"
-    #
-    #         if metadata.get('confidence'):
-    #             context_part += f"Confidence: {metadata['confidence']:.2f}\n"
-    #
-    #         context_parts.append(context_part)
-    #
-    #     return "\n".join(context_parts)
 
     def format_context(self, retrieved_results: List[Dict[str, Any]]) -> str:
         """Merge all retrieved chunks into one large context block"""
